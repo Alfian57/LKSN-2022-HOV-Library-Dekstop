@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 11.875" name="HovLibrary">
+  <DataContextMoniker Name="/HovLibraryDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b757bf22-22ca-47a9-adc4-a158dd8b8a79" absoluteBounds="3.5, 1, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/HovLibraryDataContext/Book" />
+      <nestedChildShapes>
+        <elementListCompartment Id="753eb5bf-2e90-4ac5-8366-6bab5f5657ca" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e0d7f8ab-dbc4-4aec-b041-58e1bc76a974" absoluteBounds="6.25, 1.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/HovLibraryDataContext/BookDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="173245e4-cef7-42f2-9fd6-3acdf2db08db" absoluteBounds="6.265, 2.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e2ff3bc-b87d-4a29-8f25-4aad44b58737" absoluteBounds="9, 1.5, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/HovLibraryDataContext/Borrowing" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0ac50f6-c21f-4e88-8ece-9eee1cd03cb6" absoluteBounds="9.015, 1.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6474735d-a641-44dc-9225-21e9694bf4eb" absoluteBounds="0.75, 8.75, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/HovLibraryDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6244b249-5d7f-4119-91fa-8b6634d2b072" absoluteBounds="0.765, 9.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e06a097a-6793-499a-8633-6179b3ce40f0" absoluteBounds="0.75, 5.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/HovLibraryDataContext/Language" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c35871c-544d-4d97-bf6a-bf3796f89227" absoluteBounds="0.765, 6.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d9c0803-7dca-4289-967d-f3b472e23ca1" absoluteBounds="3.5, 5.875, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/HovLibraryDataContext/Location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40f21641-4602-4bbd-9438-ad00add4a3c8" absoluteBounds="3.515, 6.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85f76d88-3b77-48e9-9cc9-11fb5ee15473" absoluteBounds="6.25, 5.25, 2, 2.9247054036458318">
+      <DataClassMoniker Name="/HovLibraryDataContext/Member" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e1e2fd0-be13-461d-92f2-fdd78dabf178" absoluteBounds="6.265, 5.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a7bd6003-1882-4f14-beae-16c4b6a24193" absoluteBounds="0.75, 1.875, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/HovLibraryDataContext/Publisher" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b220642-ccae-43e1-867a-28a857b735a3" absoluteBounds="0.765, 2.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.70274983723958); (6.25 : 2.70274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HovLibraryDataContext/Book/Book_BookDetail" />
+      <nodes>
+        <classShapeMoniker Id="b757bf22-22ca-47a9-adc4-a158dd8b8a79" />
+        <classShapeMoniker Id="e0d7f8ab-dbc4-4aec-b041-58e1bc76a974" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 2.70274983723958); (9 : 2.70274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HovLibraryDataContext/BookDetail/BookDetail_Borrowing" />
+      <nodes>
+        <classShapeMoniker Id="e0d7f8ab-dbc4-4aec-b041-58e1bc76a974" />
+        <classShapeMoniker Id="6e2ff3bc-b87d-4a29-8f25-4aad44b58737" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.75); (3.125 : 5.375); (3.125 : 2.75080485026042); (3.5 : 2.75080485026042)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HovLibraryDataContext/Language/Language_Book" />
+      <nodes>
+        <classShapeMoniker Id="e06a097a-6793-499a-8633-6179b3ce40f0" />
+        <classShapeMoniker Id="b757bf22-22ca-47a9-adc4-a158dd8b8a79" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.875); (5.875 : 5.5); (5.875 : 3.27287675585937); (6.25 : 3.27287675585937)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HovLibraryDataContext/Location/Location_BookDetail" />
+      <nodes>
+        <classShapeMoniker Id="7d9c0803-7dca-4289-967d-f3b472e23ca1" />
+        <classShapeMoniker Id="e0d7f8ab-dbc4-4aec-b041-58e1bc76a974" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 6.71235270182292); (10 : 6.71235270182292); (10 : 4.0401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HovLibraryDataContext/Member/Member_Borrowing" />
+      <nodes>
+        <classShapeMoniker Id="85f76d88-3b77-48e9-9cc9-11fb5ee15473" />
+        <classShapeMoniker Id="6e2ff3bc-b87d-4a29-8f25-4aad44b58737" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.26085083007812); (3.04166666666667 : 3.26085083007812 : JumpStart); (3.20833333333333 : 3.26085083007812 : JumpEnd); (3.5 : 3.26085083007812)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HovLibraryDataContext/Publisher/Publisher_Book" />
+      <nodes>
+        <classShapeMoniker Id="a7bd6003-1882-4f14-beae-16c4b6a24193" />
+        <classShapeMoniker Id="b757bf22-22ca-47a9-adc4-a158dd8b8a79" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

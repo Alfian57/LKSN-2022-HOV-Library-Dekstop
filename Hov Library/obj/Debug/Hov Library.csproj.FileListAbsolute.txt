@@ -1,0 +1,17 @@
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\bin\Debug\Hov Library.exe.config
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\bin\Debug\Hov Library.exe
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\bin\Debug\Hov Library.pdb
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov Library.csproj.AssemblyReference.cache
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov Library.csproj.SuggestedBindingRedirects.cache
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov_Library.Form1.resources
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov_Library.Properties.Resources.resources
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov Library.csproj.GenerateResource.cache
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov Library.csproj.CoreCompileInputs.cache
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov Library.exe
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov Library.pdb
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov_Library.FMain.resources
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov_Library.FMasterMember.resources
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov_Library.FMasterBook.resources
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov_Library.FNewBorrowing.resources
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov_Library.FAllBorrowing.resources
+D:\AlfianGadingSaputra_XIIRPL1\LKSN\Hov Library\Hov Library\obj\Debug\Hov_Library.FBookList.resources

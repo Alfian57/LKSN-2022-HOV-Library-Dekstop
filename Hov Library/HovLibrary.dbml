@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HovLibrary" Class="HovLibraryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SMKN1BANTUL;Initial Catalog=HovLibrary;Integrated Security=True" SettingsObjectName="Hov_Library.Properties.Settings" SettingsPropertyName="HovLibraryConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Book" Member="Books">
+    <Type Name="Book">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="language_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="publisher_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="authors" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="isbn" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="isbn13" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="number_of_pages" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="publication_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ratings_count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="average_rating" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="last_updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Book_BookDetail" Member="BookDetails" ThisKey="id" OtherKey="book_id" Type="BookDetail" />
+      <Association Name="Language_Book" Member="Language" ThisKey="language_id" OtherKey="id" Type="Language" IsForeignKey="true" />
+      <Association Name="Publisher_Book" Member="Publisher" ThisKey="publisher_id" OtherKey="id" Type="Publisher" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookDetails" Member="BookDetails">
+    <Type Name="BookDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="book_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="location_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="last_updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="BookDetail_Borrowing" Member="Borrowings" ThisKey="id" OtherKey="bookdetails_id" Type="Borrowing" />
+      <Association Name="Book_BookDetail" Member="Book" ThisKey="book_id" OtherKey="id" Type="Book" IsForeignKey="true" />
+      <Association Name="Location_BookDetail" Member="Location" ThisKey="location_id" OtherKey="id" Type="Location" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Borrowing" Member="Borrowings">
+    <Type Name="Borrowing">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="member_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bookdetails_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="borrow_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="return_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fine" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="last_updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="BookDetail_Borrowing" Member="BookDetail" ThisKey="bookdetails_id" OtherKey="id" Type="BookDetail" IsForeignKey="true" />
+      <Association Name="Member_Borrowing" Member="Member" ThisKey="member_id" OtherKey="id" Type="Member" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="phone_number" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="date_of_birth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="last_updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Language" Member="Languages">
+    <Type Name="Language">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="long_text" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="last_updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Language_Book" Member="Books" ThisKey="id" OtherKey="language_id" Type="Book" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Location" Member="Locations">
+    <Type Name="Location">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="last_updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Location_BookDetail" Member="BookDetails" ThisKey="id" OtherKey="location_id" Type="BookDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Member" Member="Members">
+    <Type Name="Member">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="phone_number" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="city_of_birth" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="date_of_birth" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="last_updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Member_Borrowing" Member="Borrowings" ThisKey="id" OtherKey="member_id" Type="Borrowing" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Publisher" Member="Publishers">
+    <Type Name="Publisher">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="last_updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Publisher_Book" Member="Books" ThisKey="id" OtherKey="publisher_id" Type="Book" />
+    </Type>
+  </Table>
+</Database>
