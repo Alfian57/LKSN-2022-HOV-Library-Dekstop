@@ -240,6 +240,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "FMasterMember";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FMasterMember";
             this.Load += new System.EventHandler(this.FMasterMember_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

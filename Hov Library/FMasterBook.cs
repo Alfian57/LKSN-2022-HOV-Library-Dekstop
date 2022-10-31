@@ -43,6 +43,7 @@ namespace Hov_Library
                             b.ratings_count,
                         };
 
+            dataGridView1.Rows.Clear();
             dataGridView1.DataSource = books;
         }
 
@@ -62,9 +63,14 @@ namespace Hov_Library
             DataGridViewButtonColumn show = new DataGridViewButtonColumn();
             DataGridViewButtonColumn edit = new DataGridViewButtonColumn();
             DataGridViewButtonColumn delete = new DataGridViewButtonColumn();
-            show.HeaderText = "Show";
-            edit.HeaderText = "Edit";
-            delete.HeaderText = "Delete";
+
+            show.UseColumnTextForButtonValue = true;
+            edit.UseColumnTextForButtonValue = true;
+            delete.UseColumnTextForButtonValue = true;
+
+            show.Text = "Show";
+            edit.Text = "Edit";
+            delete.Text = "Delete";
 
             dataGridView1.Columns.Add(show);
             dataGridView1.Columns.Add(edit);
@@ -178,6 +184,8 @@ namespace Hov_Library
             if (e.ColumnIndex == 0)
             {
                 FBookList f = new FBookList();
+                string bookId = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                f.bookId = Convert.ToInt32(bookId);
                 f.Show();
                 this.Hide();
             } else if (e.ColumnIndex == 1)
@@ -231,6 +239,7 @@ namespace Hov_Library
                                 select b).FirstOrDefault();
 
                     book.deleted_at = DateTime.Now;
+                    dataContext.SubmitChanges();
                     loadData();
                 }
             }

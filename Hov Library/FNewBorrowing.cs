@@ -64,6 +64,7 @@ namespace Hov_Library
 
             DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn();
             dataGridView1.Columns.Add(check);
+            dataGridView1.ReadOnly = false;
             
             foreach (var borrow in borrows)
             {
@@ -107,12 +108,37 @@ namespace Hov_Library
             if (txtMemberName.Text == "")
             {
                 MessageBox.Show("Field Still Empty");
+                return;
             }
 
-            
+            var member = (from m in dataContext.Members.Where(m => m.name == txtMemberName.Text) select m).FirstOrDefault();
+            if (member == null)
+            {
+                MessageBox.Show("Member Not Found");
+                return;
+            }
+            List<int> bookIdList = new List<int>();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[4].Value))
+                {
+                    bookIdList.Add(Convert.ToInt32(row.Cells[0].Value));
+                }
+            }
+
+            var f = new FAllBorrowing();
+            f.Data = bookIdList;
+            f.Show();
+            f.memberId = member.id;
+            this.Hide();
         }
 
         private void txtTitle_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
     }

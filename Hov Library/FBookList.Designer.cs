@@ -38,11 +38,11 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.cbLang = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -148,6 +148,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Book";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(290, 140);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 46);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Submit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // txtCode
             // 
             this.txtCode.Enabled = false;
@@ -184,15 +194,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Location";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(290, 140);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 46);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FBookList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -204,6 +205,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FBookList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FBookList";
             this.Load += new System.EventHandler(this.FBookList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

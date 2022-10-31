@@ -20,7 +20,7 @@ namespace Hov_Library
             dataContext = new HovLibraryDataContext();
         }
 
-        private void LoadData()
+        private void LoadData(Boolean isAddButton)
         {
             dataGridView1.Rows.Clear();
             var members = from m in dataContext.Members
@@ -37,16 +37,31 @@ namespace Hov_Library
                               m.gender
                           };
 
-            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-            button.Text = "Edit";
-
             dataGridView1.DataSource = members;
-            dataGridView1.Columns.Add(button);
+
+            if (isAddButton)
+            {
+                DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+                button.Text = "Edit";
+                button.UseColumnTextForButtonValue = true;
+                dataGridView1.Columns.Add(button);
+            }
+
+            dataGridView1.Columns[0].HeaderText = "ID";
+            dataGridView1.Columns[1].HeaderText = "Name";
+            dataGridView1.Columns[2].HeaderText = "Phone";
+            dataGridView1.Columns[3].HeaderText = "Email";
+            dataGridView1.Columns[4].HeaderText = "City of Birth";
+            dataGridView1.Columns[5].HeaderText = "Date of Birth";
+            dataGridView1.Columns[6].HeaderText = "Address";
+            dataGridView1.Columns[7].HeaderText = "Gender";
+            dataGridView1.Columns[8].HeaderText = "Action";
+            
         }
 
         private void FMasterMember_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadData(true);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -112,7 +127,7 @@ namespace Hov_Library
                 member.gender = "Female";
             }
 
-            LoadData();
+            LoadData(false);
             MessageBox.Show("Data Updated");
             dataContext.SubmitChanges();
         }
